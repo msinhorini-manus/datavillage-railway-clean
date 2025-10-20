@@ -32,6 +32,8 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Criar pasta public e copiar conteúdo se existir
+RUN mkdir -p ./public
 COPY --from=builder /app/public ./public
 
 # Definir permissões corretas para cache do Next.js
