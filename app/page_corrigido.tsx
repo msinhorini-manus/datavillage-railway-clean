@@ -103,7 +103,7 @@ export default function HomePage() {
       
       <div className="bg-white">
         {/* Header - EXATO da referência com cores corretas */}
-        <header className="fixed top-0 left-0 right-0 z-50 hero-gradient backdrop-blur-sm border-b border-white/20">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               {/* Logo - Verde com texto correto */}
@@ -113,7 +113,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <div className="font-bold text-white">DATA VILLAGE</div>
-                  <div className="text-xs text-green-400 font-semibold">ERP SUMMIT</div>
+                  <div className="text-xs text-green-600 font-semibold">ERP SUMMIT</div>
                 </div>
               </div>
               
@@ -131,9 +131,9 @@ export default function HomePage() {
           </div>
         </header>
 
-        {/* Hero Section - EXATO da referência */}
+        {/* Hero Section - EXATO da referência com gradiente correto */}
         <section className="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="absolute inset-0 bg-black/10"></div>
           
           <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
             {/* Badge ERP Summit - Fundo escuro */}
