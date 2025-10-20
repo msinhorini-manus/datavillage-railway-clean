@@ -3,7 +3,6 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     appDir: true,
-    serverComponentsExternalPackages: ['pg'],
   },
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com', 'picsum.photos'],
