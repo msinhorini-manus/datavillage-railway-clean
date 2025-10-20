@@ -45,75 +45,65 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="container-custom">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <div className="font-display font-bold text-gray-900">DATA VILLAGE</div>
-                <div className="text-xs text-gray-500">ERP SUMMIT</div>
-              </div>
+      <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-purple-900/95 to-blue-600/95 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
+              <span className="text-white font-bold text-sm">📊</span>
             </div>
-            <div className="hidden md:flex items-center space-x-6 text-sm">
-              <span className="text-primary-600 font-medium">Março 17-18, 2026</span>
-              <span className="text-gray-500">São Paulo</span>
+            <div>
+              <div className="text-green-400 font-bold text-lg">DATA VILLAGE</div>
+              <div className="text-green-300 text-sm">ERP SUMMIT</div>
             </div>
-            <button className="btn-primary">
-              INSCREVA-SE
-            </button>
           </div>
+          
+          <div className="text-center">
+            <div className="text-green-400 font-semibold">Março 17-18, 2026</div>
+            <div className="text-white text-sm">São Paulo</div>
+          </div>
+          
+          <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+            INSCREVA-SE
+          </button>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 hero-gradient"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
-        
-        {/* Background Animation */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '-3s' }}></div>
-        </div>
-
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-8">
-            <BarChart3 className="w-4 h-4 mr-2" />
-            ERP Summit 2026
+      <section className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-700 to-blue-600 flex items-center justify-center text-center px-4 pt-20">
+        <div className="max-w-4xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
+            <span className="text-white">📊</span>
+            <span className="text-white font-medium">ERP Summit</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 text-shadow-lg">
-            O FUTURO DOS{' '}
-            <span className="bg-gradient-to-r from-accent-400 to-accent-500 bg-clip-text text-transparent">
-              DADOS
-            </span>
-            <br />
-            ESTÁ AQUI!
+          {/* Main Title */}
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+            <div className="text-white">O FUTURO DOS</div>
+            <div className="text-yellow-400 text-shadow-lg">DADOS</div>
+            <div className="text-white">ESTÁ AQUI!</div>
           </h1>
           
-          <div className="flex items-center justify-center space-x-8 text-lg mb-8">
-            <div className="flex items-center">
-              <Calendar className="w-5 h-5 mr-2" />
-              MARÇO 17-18, 2026
-            </div>
-            <div className="flex items-center">
-              <MapPin className="w-5 h-5 mr-2" />
-              SÃO PAULO
-            </div>
+          {/* Date and Location */}
+          <div className="text-yellow-400 text-2xl md:text-3xl font-bold mb-4">
+            MARÇO 17-18, 2026
+          </div>
+          <div className="text-white text-xl md:text-2xl mb-12">
+            SÃO PAULO
           </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="btn-accent text-lg px-8 py-4">
-              <Play className="w-5 h-5 mr-2" />
-              INSCREVA-SE AGORA
+          {/* CTA Buttons */}
+          <div className="space-y-4">
+            <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-bold text-lg inline-flex items-center space-x-2 transition-all transform hover:scale-105">
+              <span>▶</span>
+              <span>INSCREVA-SE AGORA</span>
             </button>
-            <button className="btn-outline text-white border-white hover:bg-white hover:text-gray-900">
-              <ExternalLink className="w-5 h-5 mr-2" />
-              Assista ao recap do summit 2025
-            </button>
+            
+            <div>
+              <a href="#" className="text-orange-400 hover:text-orange-300 underline font-medium">
+                Assista ao recap do summit 2025
+              </a>
+            </div>
           </div>
         </div>
       </section>
