@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server'
 import { query } from '../../../lib/database'
 
+// Forçar uso do Node.js runtime para compatibilidade com PostgreSQL
+export const runtime = 'nodejs'
+
 export async function GET() {
   try {
     // Tentar buscar dados do banco PostgreSQL
