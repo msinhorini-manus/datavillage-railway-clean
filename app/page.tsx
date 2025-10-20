@@ -67,903 +67,436 @@ export default function HomePage() {
 
   if (loading) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-        fontSize: '2rem'
-      }}>
+      <div className="min-h-screen hero-gradient flex items-center justify-center text-white text-2xl">
         Carregando...
       </div>
     )
   }
 
   return (
-    <div style={{ backgroundColor: 'white' }}>
-      {/* Header - EXATO da referência */}
-      <header style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 50,
-        backgroundColor: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(8px)',
-        borderBottom: '1px solid #e5e7eb'
-      }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          height: '4rem'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <div style={{
-              width: '2rem',
-              height: '2rem',
-              background: 'linear-gradient(to right, #10b981, #059669)',
-              borderRadius: '0.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: '0.875rem'
-            }}>
-              📊
-            </div>
-            <div>
-              <div style={{ fontWeight: 'bold', color: '#111827' }}>DATA VILLAGE</div>
-              <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>ERP SUMMIT</div>
-            </div>
-          </div>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1.5rem',
-            fontSize: '0.875rem'
-          }}>
-            <span style={{ color: '#10b981', fontWeight: '500' }}>Março 17-18, 2026</span>
-            <span style={{ color: '#6b7280' }}>São Paulo</span>
-          </div>
-          <button style={{
-            backgroundColor: '#dc2626',
-            color: 'white',
-            padding: '0.75rem 1.5rem',
-            borderRadius: '0.5rem',
-            fontWeight: '600',
-            border: 'none',
-            cursor: 'pointer'
-          }}>
-            INSCREVA-SE
-          </button>
-        </div>
-      </header>
-
-      {/* Hero Section - EXATO da referência */}
-      <section style={{
-        position: 'relative',
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden'
-      }}>
-        {/* Background gradiente EXATO */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-        }}></div>
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.2)'
-        }}></div>
-
-        <div style={{
-          position: 'relative',
-          zIndex: 10,
-          textAlign: 'center',
-          color: 'white',
-          padding: '0 1rem',
-          maxWidth: '80rem',
-          margin: '0 auto'
-        }}>
-          {/* Badge ERP Summit */}
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            padding: '0.5rem 1rem',
-            backgroundColor: 'rgba(255, 255, 255, 0.2)',
-            backdropFilter: 'blur(8px)',
-            borderRadius: '9999px',
-            fontSize: '0.875rem',
-            fontWeight: '500',
-            marginBottom: '2rem'
-          }}>
-            <span style={{ marginRight: '0.5rem' }}>📊</span>
-            ERP Summit
-          </div>
-          
-          {/* Título EXATO da referência */}
-          <h1 style={{
-            fontSize: 'clamp(3rem, 8vw, 7rem)',
-            fontWeight: 'bold',
-            marginBottom: '1.5rem',
-            lineHeight: '1.1',
-            textShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
-          }}>
-            O FUTURO DOS<br/>
-            <span style={{
-              background: 'linear-gradient(to right, #fbbf24, #f59e0b)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
-              DADOS
-            </span><br/>
-            ESTÁ AQUI!
-          </h1>
-          
-          {/* Data e local */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '2rem',
-            fontSize: '1.125rem',
-            marginBottom: '2rem',
-            flexWrap: 'wrap'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: '0.5rem' }}>📅</span>
-              MARÇO 17-18, 2026
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: '0.5rem' }}>📍</span>
-              SÃO PAULO
-            </div>
-          </div>
-          
-          {/* Botões */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '1rem',
-            '@media (min-width: 640px)': {
-              flexDirection: 'row',
-              gap: '1.5rem'
-            }
-          }}>
-            <button style={{
-              backgroundColor: '#10b981',
-              color: 'white',
-              padding: '1rem 2rem',
-              borderRadius: '0.5rem',
-              fontWeight: '600',
-              fontSize: '1.125rem',
-              border: 'none',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              transition: 'background-color 0.3s'
-            }}>
-              <span style={{ marginRight: '0.5rem' }}>▶</span>
-              INSCREVA-SE AGORA
-            </button>
-            <button style={{
-              border: '2px solid white',
-              color: 'white',
-              backgroundColor: 'transparent',
-              padding: '0.75rem 1.5rem',
-              borderRadius: '0.5rem',
-              fontWeight: '600',
-              cursor: 'pointer',
-              display: 'inline-flex',
-              alignItems: 'center',
-              transition: 'all 0.3s'
-            }}>
-              <span style={{ marginRight: '0.5rem' }}>🔗</span>
-              Assista ao recap do summit 2025
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Setor em Números */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              O Setor em Números
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280',
-              maxWidth: '48rem',
-              margin: '0 auto'
-            }}>
-              O mercado de dados e Business Intelligence está em crescimento exponencial. 
-              Veja os números que comprovam a importância deste setor para o futuro dos negócios.
-            </p>
-          </div>
-          
-          {siteData?.numeros && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem',
-              marginBottom: '4rem'
-            }}>
-              {siteData.numeros.map((numero, index) => (
-                <div key={index} style={{ textAlign: 'center' }}>
-                  <div style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 'bold',
-                    color: '#2563eb',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {numero.titulo}
-                  </div>
-                  <div style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '600',
-                    color: '#111827',
-                    marginBottom: '1rem'
-                  }}>
-                    {numero.subtitulo}
-                  </div>
-                  <p style={{ color: '#6b7280' }}>
-                    {numero.descricao}
-                  </p>
+    <>
+      <style jsx global>{`
+        .hero-gradient {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .text-shadow-lg {
+          text-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .gradient-text {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      `}</style>
+      
+      <div className="bg-white">
+        {/* Header - EXATO da referência */}
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-sm">📊</span>
                 </div>
-              ))}
-            </div>
-          )}
-          
-          <div style={{
-            background: 'linear-gradient(to right, #2563eb, #7c3aed)',
-            borderRadius: '1rem',
-            padding: '2rem',
-            color: 'white',
-            textAlign: 'center',
-            maxWidth: '64rem',
-            margin: '0 auto'
-          }}>
-            <h3 style={{
-              fontSize: '1.5rem',
-              fontWeight: 'bold',
-              marginBottom: '1rem'
-            }}>
-              Transformação Digital Acelerada
-            </h3>
-            <p style={{ fontSize: '1.125rem' }}>
-              Com a digitalização dos negócios, a demanda por profissionais especializados em dados 
-              cresceu 400% nos últimos 3 anos. O ERP Summit conecta você às principais tendências 
-              e oportunidades deste mercado em expansão.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Resto das seções com o mesmo padrão... */}
-      {/* Tendências */}
-      <section style={{ padding: '4rem 0' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              Tendências que Moldam o Futuro
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280',
-              maxWidth: '48rem',
-              margin: '0 auto'
-            }}>
-              O mercado de dados está em constante evolução. Conheça as principais tendências 
-              que estão transformando a forma como as empresas utilizam Business Intelligence.
-            </p>
-          </div>
-          
-          {siteData?.tendencias && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
-            }}>
-              {siteData.tendencias.map((tendencia, index) => (
-                <div key={index} style={{
-                  backgroundColor: 'white',
-                  borderRadius: '0.75rem',
-                  padding: '1.5rem',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 'bold',
-                    color: '#7c3aed',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {tendencia.percentual}%
-                  </div>
-                  <h3 style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '600',
-                    color: '#111827',
-                    marginBottom: '1rem'
-                  }}>
-                    {tendencia.nome}
-                  </h3>
-                  <p style={{ color: '#6b7280' }}>
-                    {tendencia.descricao}
-                  </p>
+                <div>
+                  <div className="font-bold text-gray-900">DATA VILLAGE</div>
+                  <div className="text-xs text-gray-500">ERP SUMMIT</div>
                 </div>
-              ))}
+              </div>
+              <div className="hidden md:flex items-center space-x-6 text-sm">
+                <span className="text-blue-600 font-medium">Março 17-18, 2026</span>
+                <span className="text-gray-500">São Paulo</span>
+              </div>
+              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                INSCREVA-SE
+              </button>
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        </header>
 
-      {/* ROI em BI */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              ROI em Business Intelligence
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280',
-              maxWidth: '48rem',
-              margin: '0 auto'
-            }}>
-              Empresas que investem em BI obtêm retornos significativos em produtividade, 
-              tomada de decisão e competitividade no mercado.
-            </p>
-          </div>
+        {/* Hero Section - EXATO da referência */}
+        <section className="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 bg-black/20"></div>
           
-          {siteData?.rois && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '2rem',
-              marginBottom: '4rem'
-            }}>
-              {siteData.rois.map((roi, index) => (
-                <div key={index} style={{ textAlign: 'center' }}>
-                  <div style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 'bold',
-                    color: '#059669',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {roi.metrica}
-                  </div>
-                  <div style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '600',
-                    color: '#111827',
-                    marginBottom: '1rem'
-                  }}>
-                    {roi.titulo}
-                  </div>
-                  <p style={{ color: '#6b7280' }}>
-                    {roi.descricao}
-                  </p>
-                </div>
-              ))}
+          <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+            {/* Badge ERP Summit */}
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium mb-8">
+              <span className="mr-2">📊</span>
+              ERP Summit
             </div>
-          )}
-          
-          <div style={{
-            textAlign: 'center',
-            background: 'linear-gradient(to right, #059669, #2563eb)',
-            borderRadius: '1rem',
-            padding: '2rem',
-            color: 'white',
-            maxWidth: '32rem',
-            margin: '0 auto'
-          }}>
-            <div style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              marginBottom: '0.5rem'
-            }}>
-              $33Bi
+            
+            {/* Título GIGANTE - EXATO da referência */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight text-shadow-lg">
+              O FUTURO DOS<br/>
+              <span className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+                DADOS
+              </span><br/>
+              ESTÁ AQUI!
+            </h1>
+            
+            {/* Data e local */}
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-lg mb-8">
+              <div className="flex items-center">
+                <span className="mr-2">📅</span>
+                MARÇO 17-18, 2026
+              </div>
+              <div className="flex items-center">
+                <span className="mr-2">📍</span>
+                SÃO PAULO
+              </div>
             </div>
-            <div style={{
-              fontSize: '1.25rem',
-              fontWeight: '600',
-              marginBottom: '0.5rem'
-            }}>
-              Mercado global de BI em 2024
-            </div>
-            <div style={{ fontSize: '1.125rem' }}>
-              +11.9% crescimento anual
+            
+            {/* Botões */}
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center">
+                <span className="mr-2">▶</span>
+                INSCREVA-SE AGORA
+              </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-purple-600 px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center">
+                <span className="mr-2">🔗</span>
+                Assista ao recap do summit 2025
+              </button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* BI por Setor */}
-      <section style={{ padding: '4rem 0' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              BI por Setor da Economia
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280',
-              maxWidth: '48rem',
-              margin: '0 auto'
-            }}>
-              Cada setor tem suas particularidades na adoção de Business Intelligence. 
-              Veja como diferentes indústrias estão aproveitando o poder dos dados.
-            </p>
-          </div>
-          
-          {siteData?.setores && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-              gap: '1.5rem'
-            }}>
-              {siteData.setores.map((setor, index) => (
-                <div key={index} style={{
-                  backgroundColor: 'white',
-                  borderRadius: '0.75rem',
-                  padding: '1.5rem',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '1.875rem',
-                    fontWeight: 'bold',
-                    color: '#2563eb',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {setor.percentual}%
-                  </div>
-                  <h3 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: '#111827',
-                    marginBottom: '0.75rem'
-                  }}>
-                    {setor.nome}
-                  </h3>
-                  <p style={{
-                    fontSize: '0.875rem',
-                    color: '#6b7280'
-                  }}>
-                    {setor.descricao}
-                  </p>
-                </div>
-              ))}
+        {/* Setor em Números */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                O Setor em Números
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                O mercado de dados e Business Intelligence está em crescimento exponencial. 
+                Veja os números que comprovam a importância deste setor para o futuro dos negócios.
+              </p>
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* Desafios */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              Principais Desafios do Mercado
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280',
-              maxWidth: '48rem',
-              margin: '0 auto'
-            }}>
-              Apesar do crescimento, o setor de BI ainda enfrenta obstáculos. 
-              Conhecer esses desafios é fundamental para superá-los.
-            </p>
-          </div>
-          
-          {siteData?.desafios && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem',
-              marginBottom: '4rem'
-            }}>
-              {siteData.desafios.map((desafio, index) => (
-                <div key={index} style={{ textAlign: 'center' }}>
-                  <div style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 'bold',
-                    color: '#dc2626',
-                    marginBottom: '0.5rem'
-                  }}>
-                    {desafio.percentual}%
-                  </div>
-                  <h3 style={{
-                    fontSize: '1.125rem',
-                    fontWeight: '600',
-                    color: '#111827',
-                    marginBottom: '1rem'
-                  }}>
-                    {desafio.nome}
-                  </h3>
-                  <p style={{ color: '#6b7280' }}>
-                    {desafio.descricao}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-          
-          <div style={{
-            background: 'linear-gradient(to right, #d97706, #ea580c)',
-            borderRadius: '1rem',
-            padding: '2rem',
-            color: 'white',
-            textAlign: 'center',
-            maxWidth: '64rem',
-            margin: '0 auto'
-          }}>
-            <h3 style={{
-              fontSize: '1.5rem',
-              fontWeight: 'bold',
-              marginBottom: '1rem'
-            }}>
-              Oportunidade de Mercado
-            </h3>
-            <p style={{ fontSize: '1.125rem' }}>
-              Empresas que superam esses desafios têm vantagem competitiva significativa 
-              e crescem 2.3x mais rápido que a concorrência.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Projeções */}
-      <section style={{ padding: '4rem 0' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              Projeções para 2027
-            </h2>
-          </div>
-          
-          {siteData?.projecoes && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
-            }}>
-              {siteData.projecoes.map((projecao, index) => (
-                <div key={index} style={{
-                  backgroundColor: 'white',
-                  borderRadius: '0.75rem',
-                  padding: '2rem',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                  textAlign: 'center'
-                }}>
-                  <div style={{
-                    fontSize: '1.875rem',
-                    fontWeight: 'bold',
-                    color: '#7c3aed',
-                    marginBottom: '1rem'
-                  }}>
-                    {projecao.metrica}
-                  </div>
-                  <h3 style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '600',
-                    color: '#111827',
-                    marginBottom: '1rem'
-                  }}>
-                    {projecao.titulo}
-                  </h3>
-                  <p style={{ color: '#6b7280' }}>
-                    {projecao.descricao}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Palestrantes */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              Palestrantes
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280'
-            }}>
-              Conheça os especialistas que compartilharão seus conhecimentos no evento.
-            </p>
-          </div>
-          
-          {siteData?.palestrantes && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
-            }}>
-              {siteData.palestrantes.map((palestrante, index) => (
-                <div key={index} style={{
-                  backgroundColor: 'white',
-                  borderRadius: '0.75rem',
-                  padding: '1.5rem',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
-                }}>
-                  <div style={{
-                    width: '5rem',
-                    height: '5rem',
-                    background: 'linear-gradient(to right, #7c3aed, #2563eb)',
-                    borderRadius: '50%',
-                    margin: '0 auto 1rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}>
-                    <span style={{
-                      fontSize: '1.5rem',
-                      fontWeight: 'bold',
-                      color: 'white'
-                    }}>
-                      {palestrante.nome.charAt(0)}
-                    </span>
-                  </div>
-                  <h3 style={{
-                    fontSize: '1.25rem',
-                    fontWeight: 'bold',
-                    textAlign: 'center',
-                    marginBottom: '0.5rem',
-                    color: '#111827'
-                  }}>
-                    {palestrante.nome}
-                  </h3>
-                  <p style={{
-                    color: '#7c3aed',
-                    textAlign: 'center',
-                    marginBottom: '0.25rem'
-                  }}>
-                    {palestrante.cargo}
-                  </p>
-                  <p style={{
-                    color: '#6b7280',
-                    textAlign: 'center',
-                    marginBottom: '1rem'
-                  }}>
-                    {palestrante.empresa}
-                  </p>
-                  <p style={{
-                    color: '#6b7280',
-                    fontSize: '0.875rem',
-                    textAlign: 'center'
-                  }}>
-                    {palestrante.biografia}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Passes */}
-      <section style={{ padding: '4rem 0' }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem'
-        }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{
-              fontSize: '2.5rem',
-              fontWeight: 'bold',
-              color: '#111827',
-              marginBottom: '1rem'
-            }}>
-              Escolha Seu Passe
-            </h2>
-            <p style={{
-              fontSize: '1.25rem',
-              color: '#6b7280',
-              maxWidth: '48rem',
-              margin: '0 auto'
-            }}>
-              Diferentes opções para atender suas necessidades e orçamento. 
-              Todos os passes incluem acesso ao conteúdo de alta qualidade e networking.
-            </p>
-          </div>
-          
-          {siteData?.passes && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '2rem'
-            }}>
-              {siteData.passes.map((passe, index) => (
-                <div key={index} style={{
-                  backgroundColor: 'white',
-                  borderRadius: '0.75rem',
-                  padding: '2rem',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                  ...(passe.nome === 'Premium' ? {
-                    outline: '4px solid #7c3aed',
-                    transform: 'scale(1.05)'
-                  } : {})
-                }}>
-                  <div style={{
-                    textAlign: 'center',
-                    marginBottom: '1.5rem'
-                  }}>
-                    <h3 style={{
-                      fontSize: '1.5rem',
-                      fontWeight: 'bold',
-                      color: '#111827',
-                      marginBottom: '0.5rem'
-                    }}>
-                      {passe.nome}
-                    </h3>
-                    <div style={{
-                      fontSize: '1.875rem',
-                      fontWeight: 'bold',
-                      color: '#7c3aed'
-                    }}>
-                      R$ {passe.preco.toLocaleString()}
+            
+            {siteData?.numeros && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                {siteData.numeros.map((numero, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
+                      {numero.titulo}
                     </div>
+                    <div className="text-xl font-semibold text-gray-900 mb-4">
+                      {numero.subtitulo}
+                    </div>
+                    <p className="text-gray-600">
+                      {numero.descricao}
+                    </p>
                   </div>
-                  
-                  <p style={{
-                    color: '#6b7280',
-                    marginBottom: '1.5rem',
-                    textAlign: 'center'
-                  }}>
-                    {passe.beneficios}
-                  </p>
-                  
-                  <button style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    borderRadius: '0.5rem',
-                    fontWeight: '600',
-                    border: 'none',
-                    cursor: 'pointer',
-                    ...(passe.nome === 'Premium' ? {
-                      backgroundColor: '#7c3aed',
-                      color: 'white'
-                    } : {
-                      backgroundColor: '#e5e7eb',
-                      color: '#111827'
-                    })
-                  }}>
-                    Escolher {passe.nome}
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer style={{
-        backgroundColor: '#111827',
-        color: 'white',
-        padding: '3rem 0'
-      }}>
-        <div style={{
-          maxWidth: '1280px',
-          margin: '0 auto',
-          padding: '0 1rem',
-          textAlign: 'center'
-        }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.5rem',
-            marginBottom: '1rem'
-          }}>
-            <div style={{
-              width: '2rem',
-              height: '2rem',
-              background: 'linear-gradient(to right, #2563eb, #7c3aed)',
-              borderRadius: '0.5rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: '0.875rem'
-            }}>
-              📊
-            </div>
-            <div>
-              <div style={{ fontWeight: 'bold' }}>DATA VILLAGE</div>
-              <div style={{ fontSize: '0.875rem', color: '#9ca3af' }}>ERP SUMMIT 2026</div>
+                ))}
+              </div>
+            )}
+            
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">
+                Transformação Digital Acelerada
+              </h3>
+              <p className="text-lg">
+                Com a digitalização dos negócios, a demanda por profissionais especializados em dados 
+                cresceu 400% nos últimos 3 anos. O ERP Summit conecta você às principais tendências 
+                e oportunidades deste mercado em expansão.
+              </p>
             </div>
           </div>
-          <p style={{ color: '#9ca3af' }}>
-            © 2026 Data Village ERP Summit. Todos os direitos reservados.
-          </p>
-        </div>
-      </footer>
-    </div>
+        </section>
+
+        {/* Tendências */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Tendências que Moldam o Futuro
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                O mercado de dados está em constante evolução. Conheça as principais tendências 
+                que estão transformando a forma como as empresas utilizam Business Intelligence.
+              </p>
+            </div>
+            
+            {siteData?.tendencias && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {siteData.tendencias.map((tendencia, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div className="text-4xl font-bold text-purple-600 mb-2">
+                      {tendencia.percentual}%
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      {tendencia.nome}
+                    </h3>
+                    <p className="text-gray-600">
+                      {tendencia.descricao}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* ROI em BI */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                ROI em Business Intelligence
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Empresas que investem em BI obtêm retornos significativos em produtividade, 
+                tomada de decisão e competitividade no mercado.
+              </p>
+            </div>
+            
+            {siteData?.rois && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                {siteData.rois.map((roi, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-4xl font-bold text-green-600 mb-2">
+                      {roi.metrica}
+                    </div>
+                    <div className="text-xl font-semibold text-gray-900 mb-4">
+                      {roi.titulo}
+                    </div>
+                    <p className="text-gray-600">
+                      {roi.descricao}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            <div className="text-center bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white max-w-2xl mx-auto">
+              <div className="text-4xl font-bold mb-2">$33Bi</div>
+              <div className="text-xl font-semibold mb-2">Mercado global de BI em 2024</div>
+              <div className="text-lg">+11.9% crescimento anual</div>
+            </div>
+          </div>
+        </section>
+
+        {/* BI por Setor */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                BI por Setor da Economia
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Cada setor tem suas particularidades na adoção de Business Intelligence. 
+                Veja como diferentes indústrias estão aproveitando o poder dos dados.
+              </p>
+            </div>
+            
+            {siteData?.setores && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {siteData.setores.map((setor, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">
+                      {setor.percentual}%
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                      {setor.nome}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {setor.descricao}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Desafios */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Principais Desafios do Mercado
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Apesar do crescimento, o setor de BI ainda enfrenta obstáculos. 
+                Conhecer esses desafios é fundamental para superá-los.
+              </p>
+            </div>
+            
+            {siteData?.desafios && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                {siteData.desafios.map((desafio, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-4xl font-bold text-red-600 mb-2">
+                      {desafio.percentual}%
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      {desafio.nome}
+                    </h3>
+                    <p className="text-gray-600">
+                      {desafio.descricao}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-white text-center max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">
+                Oportunidade de Mercado
+              </h3>
+              <p className="text-lg">
+                Empresas que superam esses desafios têm vantagem competitiva significativa 
+                e crescem 2.3x mais rápido que a concorrência.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Projeções */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Projeções para 2027
+              </h2>
+            </div>
+            
+            {siteData?.projecoes && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {siteData.projecoes.map((projecao, index) => (
+                  <div key={index} className="bg-white rounded-xl p-8 shadow-lg text-center">
+                    <div className="text-3xl font-bold text-purple-600 mb-4">
+                      {projecao.metrica}
+                    </div>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      {projecao.titulo}
+                    </h3>
+                    <p className="text-gray-600">
+                      {projecao.descricao}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Palestrantes */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Palestrantes
+              </h2>
+              <p className="text-xl text-gray-600">
+                Conheça os especialistas que compartilharão seus conhecimentos no evento.
+              </p>
+            </div>
+            
+            {siteData?.palestrantes && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {siteData.palestrantes.map((palestrante, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <span className="text-2xl font-bold text-white">
+                        {palestrante.nome.charAt(0)}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-center mb-2 text-gray-900">
+                      {palestrante.nome}
+                    </h3>
+                    <p className="text-purple-600 text-center mb-1">
+                      {palestrante.cargo}
+                    </p>
+                    <p className="text-gray-600 text-center mb-4">
+                      {palestrante.empresa}
+                    </p>
+                    <p className="text-gray-600 text-sm text-center">
+                      {palestrante.biografia}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Passes */}
+        <section className="py-16 lg:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Escolha Seu Passe
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Diferentes opções para atender suas necessidades e orçamento. 
+                Todos os passes incluem acesso ao conteúdo de alta qualidade e networking.
+              </p>
+            </div>
+            
+            {siteData?.passes && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {siteData.passes.map((passe, index) => (
+                  <div key={index} className={`bg-white rounded-xl p-8 shadow-lg ${
+                    passe.nome === 'Premium' ? 'ring-4 ring-purple-600 transform scale-105' : ''
+                  }`}>
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        {passe.nome}
+                      </h3>
+                      <div className="text-3xl font-bold text-purple-600">
+                        R$ {passe.preco.toLocaleString()}
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6 text-center">
+                      {passe.beneficios}
+                    </p>
+                    
+                    <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+                      passe.nome === 'Premium' 
+                        ? 'bg-purple-600 hover:bg-purple-700 text-white' 
+                        : 'bg-gray-200 hover:bg-gray-300 text-gray-900'
+                    }`}>
+                      Escolher {passe.nome}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-sm">📊</span>
+              </div>
+              <div>
+                <div className="font-bold">DATA VILLAGE</div>
+                <div className="text-sm text-gray-400">ERP SUMMIT 2026</div>
+              </div>
+            </div>
+            <p className="text-gray-400">
+              © 2026 Data Village ERP Summit. Todos os direitos reservados.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
   )
 }
