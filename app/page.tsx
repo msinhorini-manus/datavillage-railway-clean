@@ -67,102 +67,270 @@ export default function HomePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-700 to-blue-600 flex items-center justify-center">
-        <div className="text-white text-2xl">Carregando...</div>
+      <div style={{
+        minHeight: '100vh',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: '2rem'
+      }}>
+        Carregando...
       </div>
     )
   }
 
   return (
-    <>
-      {/* Header */}
-      <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-purple-900/95 to-blue-600/95 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-sm">📊</span>
+    <div style={{ backgroundColor: 'white' }}>
+      {/* Header - EXATO da referência */}
+      <header style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        backdropFilter: 'blur(8px)',
+        borderBottom: '1px solid #e5e7eb'
+      }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: '4rem'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div style={{
+              width: '2rem',
+              height: '2rem',
+              background: 'linear-gradient(to right, #10b981, #059669)',
+              borderRadius: '0.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '0.875rem'
+            }}>
+              📊
             </div>
             <div>
-              <div className="text-green-400 font-bold text-lg">DATA VILLAGE</div>
-              <div className="text-green-300 text-sm">ERP SUMMIT</div>
+              <div style={{ fontWeight: 'bold', color: '#111827' }}>DATA VILLAGE</div>
+              <div style={{ fontSize: '0.75rem', color: '#6b7280' }}>ERP SUMMIT</div>
             </div>
           </div>
-          
-          <div className="text-center">
-            <div className="text-green-400 font-semibold">Março 17-18, 2026</div>
-            <div className="text-white text-sm">São Paulo</div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1.5rem',
+            fontSize: '0.875rem'
+          }}>
+            <span style={{ color: '#10b981', fontWeight: '500' }}>Março 17-18, 2026</span>
+            <span style={{ color: '#6b7280' }}>São Paulo</span>
           </div>
-          
-          <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+          <button style={{
+            backgroundColor: '#dc2626',
+            color: 'white',
+            padding: '0.75rem 1.5rem',
+            borderRadius: '0.5rem',
+            fontWeight: '600',
+            border: 'none',
+            cursor: 'pointer'
+          }}>
             INSCREVA-SE
           </button>
         </div>
       </header>
 
-      {/* Hero Section - Tela Cheia com Gradiente */}
-      <section className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-700 to-blue-600 flex items-center justify-center text-center px-4">
-        <div className="max-w-6xl mx-auto">
+      {/* Hero Section - EXATO da referência */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden'
+      }}>
+        {/* Background gradiente EXATO */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        }}></div>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.2)'
+        }}></div>
+
+        <div style={{
+          position: 'relative',
+          zIndex: 10,
+          textAlign: 'center',
+          color: 'white',
+          padding: '0 1rem',
+          maxWidth: '80rem',
+          margin: '0 auto'
+        }}>
           {/* Badge ERP Summit */}
-          <div className="inline-flex items-center space-x-2 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full mb-12">
-            <span className="text-white">📊</span>
-            <span className="text-white font-medium">ERP Summit</span>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            padding: '0.5rem 1rem',
+            backgroundColor: 'rgba(255, 255, 255, 0.2)',
+            backdropFilter: 'blur(8px)',
+            borderRadius: '9999px',
+            fontSize: '0.875rem',
+            fontWeight: '500',
+            marginBottom: '2rem'
+          }}>
+            <span style={{ marginRight: '0.5rem' }}>📊</span>
+            ERP Summit
           </div>
           
-          {/* Título Principal - GIGANTE */}
-          <h1 className="font-bold mb-12 leading-none" style={{ fontSize: 'clamp(4rem, 12vw, 12rem)' }}>
-            <div className="text-white mb-4">O FUTURO DOS</div>
-            <div className="text-yellow-400 mb-4" style={{ textShadow: '0 0 30px rgba(255, 193, 7, 0.5)' }}>
+          {/* Título EXATO da referência */}
+          <h1 style={{
+            fontSize: 'clamp(3rem, 8vw, 7rem)',
+            fontWeight: 'bold',
+            marginBottom: '1.5rem',
+            lineHeight: '1.1',
+            textShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+          }}>
+            O FUTURO DOS<br/>
+            <span style={{
+              background: 'linear-gradient(to right, #fbbf24, #f59e0b)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
               DADOS
-            </div>
-            <div className="text-white">ESTÁ AQUI!</div>
+            </span><br/>
+            ESTÁ AQUI!
           </h1>
           
-          {/* Data e Local */}
-          <div className="text-yellow-400 font-bold mb-4" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)' }}>
-            MARÇO 17-18, 2026
-          </div>
-          <div className="text-white mb-16" style={{ fontSize: 'clamp(1.25rem, 3vw, 2.5rem)' }}>
-            SÃO PAULO
+          {/* Data e local */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '2rem',
+            fontSize: '1.125rem',
+            marginBottom: '2rem',
+            flexWrap: 'wrap'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: '0.5rem' }}>📅</span>
+              MARÇO 17-18, 2026
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: '0.5rem' }}>📍</span>
+              SÃO PAULO
+            </div>
           </div>
           
-          {/* Botões de Ação */}
-          <div className="space-y-6">
-            <button className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 rounded-xl font-bold text-xl inline-flex items-center space-x-3 transition-all transform hover:scale-105 shadow-2xl">
-              <span className="text-2xl">▶</span>
-              <span>INSCREVA-SE AGORA</span>
+          {/* Botões */}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '1rem',
+            '@media (min-width: 640px)': {
+              flexDirection: 'row',
+              gap: '1.5rem'
+            }
+          }}>
+            <button style={{
+              backgroundColor: '#10b981',
+              color: 'white',
+              padding: '1rem 2rem',
+              borderRadius: '0.5rem',
+              fontWeight: '600',
+              fontSize: '1.125rem',
+              border: 'none',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              transition: 'background-color 0.3s'
+            }}>
+              <span style={{ marginRight: '0.5rem' }}>▶</span>
+              INSCREVA-SE AGORA
             </button>
-            
-            <div>
-              <a href="#" className="text-orange-400 hover:text-orange-300 underline font-medium text-lg">
-                Assista ao recap do summit 2025
-              </a>
-            </div>
+            <button style={{
+              border: '2px solid white',
+              color: 'white',
+              backgroundColor: 'transparent',
+              padding: '0.75rem 1.5rem',
+              borderRadius: '0.5rem',
+              fontWeight: '600',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              transition: 'all 0.3s'
+            }}>
+              <span style={{ marginRight: '0.5rem' }}>🔗</span>
+              Assista ao recap do summit 2025
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Setor em Números - Fundo Escuro */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">O Setor em Números</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+      {/* Setor em Números */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
+              O Setor em Números
+            </h2>
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280',
+              maxWidth: '48rem',
+              margin: '0 auto'
+            }}>
               O mercado de dados e Business Intelligence está em crescimento exponencial. 
               Veja os números que comprovam a importância deste setor para o futuro dos negócios.
             </p>
           </div>
           
           {siteData?.numeros && (
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginBottom: '4rem'
+            }}>
               {siteData.numeros.map((numero, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-5xl font-bold text-yellow-400 mb-2">
+                <div key={index} style={{ textAlign: 'center' }}>
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 'bold',
+                    color: '#2563eb',
+                    marginBottom: '0.5rem'
+                  }}>
                     {numero.titulo}
                   </div>
-                  <div className="text-xl font-semibold mb-4">
+                  <div style={{
+                    fontSize: '1.25rem',
+                    fontWeight: '600',
+                    color: '#111827',
+                    marginBottom: '1rem'
+                  }}>
                     {numero.subtitulo}
                   </div>
-                  <p className="text-gray-300">
+                  <p style={{ color: '#6b7280' }}>
                     {numero.descricao}
                   </p>
                 </div>
@@ -170,12 +338,23 @@ export default function HomePage() {
             </div>
           )}
           
-          {/* Card Destaque com Gradiente */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4 text-center">
+          <div style={{
+            background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+            borderRadius: '1rem',
+            padding: '2rem',
+            color: 'white',
+            textAlign: 'center',
+            maxWidth: '64rem',
+            margin: '0 auto'
+          }}>
+            <h3 style={{
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              marginBottom: '1rem'
+            }}>
               Transformação Digital Acelerada
             </h3>
-            <p className="text-lg text-center leading-relaxed">
+            <p style={{ fontSize: '1.125rem' }}>
               Com a digitalização dos negócios, a demanda por profissionais especializados em dados 
               cresceu 400% nos últimos 3 anos. O ERP Summit conecta você às principais tendências 
               e oportunidades deste mercado em expansão.
@@ -184,30 +363,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Tendências - Fundo Claro */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+      {/* Resto das seções com o mesmo padrão... */}
+      {/* Tendências */}
+      <section style={{ padding: '4rem 0' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
               Tendências que Moldam o Futuro
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280',
+              maxWidth: '48rem',
+              margin: '0 auto'
+            }}>
               O mercado de dados está em constante evolução. Conheça as principais tendências 
               que estão transformando a forma como as empresas utilizam Business Intelligence.
             </p>
           </div>
           
           {siteData?.tendencias && (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem'
+            }}>
               {siteData.tendencias.map((tendencia, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <div className="text-4xl font-bold text-purple-600 mb-2">
+                <div key={index} style={{
+                  backgroundColor: 'white',
+                  borderRadius: '0.75rem',
+                  padding: '1.5rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 'bold',
+                    color: '#7c3aed',
+                    marginBottom: '0.5rem'
+                  }}>
                     {tendencia.percentual}%
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 style={{
+                    fontSize: '1.25rem',
+                    fontWeight: '600',
+                    color: '#111827',
+                    marginBottom: '1rem'
+                  }}>
                     {tendencia.nome}
                   </h3>
-                  <p className="text-gray-600">
+                  <p style={{ color: '#6b7280' }}>
                     {tendencia.descricao}
                   </p>
                 </div>
@@ -217,28 +431,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ROI em BI - Fundo Escuro */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">ROI em Business Intelligence</h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+      {/* ROI em BI */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
+              ROI em Business Intelligence
+            </h2>
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280',
+              maxWidth: '48rem',
+              margin: '0 auto'
+            }}>
               Empresas que investem em BI obtêm retornos significativos em produtividade, 
               tomada de decisão e competitividade no mercado.
             </p>
           </div>
           
           {siteData?.rois && (
-            <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '2rem',
+              marginBottom: '4rem'
+            }}>
               {siteData.rois.map((roi, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-5xl font-bold text-green-400 mb-2">
+                <div key={index} style={{ textAlign: 'center' }}>
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 'bold',
+                    color: '#059669',
+                    marginBottom: '0.5rem'
+                  }}>
                     {roi.metrica}
                   </div>
-                  <div className="text-xl font-semibold mb-4">
+                  <div style={{
+                    fontSize: '1.25rem',
+                    fontWeight: '600',
+                    color: '#111827',
+                    marginBottom: '1rem'
+                  }}>
                     {roi.titulo}
                   </div>
-                  <p className="text-gray-300">
+                  <p style={{ color: '#6b7280' }}>
                     {roi.descricao}
                   </p>
                 </div>
@@ -246,38 +491,97 @@ export default function HomePage() {
             </div>
           )}
           
-          <div className="text-center bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 max-w-2xl mx-auto">
-            <div className="text-5xl font-bold mb-2">$33Bi</div>
-            <div className="text-xl font-semibold mb-2">Mercado global de BI em 2024</div>
-            <div className="text-lg">+11.9% crescimento anual</div>
+          <div style={{
+            textAlign: 'center',
+            background: 'linear-gradient(to right, #059669, #2563eb)',
+            borderRadius: '1rem',
+            padding: '2rem',
+            color: 'white',
+            maxWidth: '32rem',
+            margin: '0 auto'
+          }}>
+            <div style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              marginBottom: '0.5rem'
+            }}>
+              $33Bi
+            </div>
+            <div style={{
+              fontSize: '1.25rem',
+              fontWeight: '600',
+              marginBottom: '0.5rem'
+            }}>
+              Mercado global de BI em 2024
+            </div>
+            <div style={{ fontSize: '1.125rem' }}>
+              +11.9% crescimento anual
+            </div>
           </div>
         </div>
       </section>
 
-      {/* BI por Setor - Fundo Claro */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+      {/* BI por Setor */}
+      <section style={{ padding: '4rem 0' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
               BI por Setor da Economia
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280',
+              maxWidth: '48rem',
+              margin: '0 auto'
+            }}>
               Cada setor tem suas particularidades na adoção de Business Intelligence. 
               Veja como diferentes indústrias estão aproveitando o poder dos dados.
             </p>
           </div>
           
           {siteData?.setores && (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '1.5rem'
+            }}>
               {siteData.setores.map((setor, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">
+                <div key={index} style={{
+                  backgroundColor: 'white',
+                  borderRadius: '0.75rem',
+                  padding: '1.5rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    fontSize: '1.875rem',
+                    fontWeight: 'bold',
+                    color: '#2563eb',
+                    marginBottom: '0.5rem'
+                  }}>
                     {setor.percentual}%
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '600',
+                    color: '#111827',
+                    marginBottom: '0.75rem'
+                  }}>
                     {setor.nome}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p style={{
+                    fontSize: '0.875rem',
+                    color: '#6b7280'
+                  }}>
                     {setor.descricao}
                   </p>
                 </div>
@@ -287,30 +591,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Desafios - Fundo Escuro */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">
+      {/* Desafios */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
               Principais Desafios do Mercado
             </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280',
+              maxWidth: '48rem',
+              margin: '0 auto'
+            }}>
               Apesar do crescimento, o setor de BI ainda enfrenta obstáculos. 
               Conhecer esses desafios é fundamental para superá-los.
             </p>
           </div>
           
           {siteData?.desafios && (
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              marginBottom: '4rem'
+            }}>
               {siteData.desafios.map((desafio, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-5xl font-bold text-red-400 mb-2">
+                <div key={index} style={{ textAlign: 'center' }}>
+                  <div style={{
+                    fontSize: '2.5rem',
+                    fontWeight: 'bold',
+                    color: '#dc2626',
+                    marginBottom: '0.5rem'
+                  }}>
                     {desafio.percentual}%
                   </div>
-                  <h3 className="text-lg font-semibold mb-4">
+                  <h3 style={{
+                    fontSize: '1.125rem',
+                    fontWeight: '600',
+                    color: '#111827',
+                    marginBottom: '1rem'
+                  }}>
                     {desafio.nome}
                   </h3>
-                  <p className="text-gray-300">
+                  <p style={{ color: '#6b7280' }}>
                     {desafio.descricao}
                   </p>
                 </div>
@@ -318,9 +651,23 @@ export default function HomePage() {
             </div>
           )}
           
-          <div className="bg-gradient-to-r from-yellow-600 to-orange-600 rounded-2xl p-8 max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl font-bold mb-4">Oportunidade de Mercado</h3>
-            <p className="text-lg">
+          <div style={{
+            background: 'linear-gradient(to right, #d97706, #ea580c)',
+            borderRadius: '1rem',
+            padding: '2rem',
+            color: 'white',
+            textAlign: 'center',
+            maxWidth: '64rem',
+            margin: '0 auto'
+          }}>
+            <h3 style={{
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+              marginBottom: '1rem'
+            }}>
+              Oportunidade de Mercado
+            </h3>
+            <p style={{ fontSize: '1.125rem' }}>
               Empresas que superam esses desafios têm vantagem competitiva significativa 
               e crescem 2.3x mais rápido que a concorrência.
             </p>
@@ -328,26 +675,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Projeções - Fundo Claro */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+      {/* Projeções */}
+      <section style={{ padding: '4rem 0' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
               Projeções para 2027
             </h2>
           </div>
           
           {siteData?.projecoes && (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem'
+            }}>
               {siteData.projecoes.map((projecao, index) => (
-                <div key={index} className="bg-white rounded-xl p-8 shadow-lg text-center">
-                  <div className="text-4xl font-bold text-purple-600 mb-4">
+                <div key={index} style={{
+                  backgroundColor: 'white',
+                  borderRadius: '0.75rem',
+                  padding: '2rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  textAlign: 'center'
+                }}>
+                  <div style={{
+                    fontSize: '1.875rem',
+                    fontWeight: 'bold',
+                    color: '#7c3aed',
+                    marginBottom: '1rem'
+                  }}>
                     {projecao.metrica}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 style={{
+                    fontSize: '1.25rem',
+                    fontWeight: '600',
+                    color: '#111827',
+                    marginBottom: '1rem'
+                  }}>
                     {projecao.titulo}
                   </h3>
-                  <p className="text-gray-600">
+                  <p style={{ color: '#6b7280' }}>
                     {projecao.descricao}
                   </p>
                 </div>
@@ -357,35 +733,89 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Palestrantes - Fundo Escuro */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-6">Palestrantes</h2>
-            <p className="text-xl text-gray-300">
+      {/* Palestrantes */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#f9fafb' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
+              Palestrantes
+            </h2>
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280'
+            }}>
               Conheça os especialistas que compartilharão seus conhecimentos no evento.
             </p>
           </div>
           
           {siteData?.palestrantes && (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem'
+            }}>
               {siteData.palestrantes.map((palestrante, index) => (
-                <div key={index} className="bg-gray-800 rounded-xl p-6">
-                  <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-2xl font-bold">
+                <div key={index} style={{
+                  backgroundColor: 'white',
+                  borderRadius: '0.75rem',
+                  padding: '1.5rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+                }}>
+                  <div style={{
+                    width: '5rem',
+                    height: '5rem',
+                    background: 'linear-gradient(to right, #7c3aed, #2563eb)',
+                    borderRadius: '50%',
+                    margin: '0 auto 1rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <span style={{
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      color: 'white'
+                    }}>
                       {palestrante.nome.charAt(0)}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-center mb-2">
+                  <h3 style={{
+                    fontSize: '1.25rem',
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                    marginBottom: '0.5rem',
+                    color: '#111827'
+                  }}>
                     {palestrante.nome}
                   </h3>
-                  <p className="text-purple-400 text-center mb-1">
+                  <p style={{
+                    color: '#7c3aed',
+                    textAlign: 'center',
+                    marginBottom: '0.25rem'
+                  }}>
                     {palestrante.cargo}
                   </p>
-                  <p className="text-gray-400 text-center mb-4">
+                  <p style={{
+                    color: '#6b7280',
+                    textAlign: 'center',
+                    marginBottom: '1rem'
+                  }}>
                     {palestrante.empresa}
                   </p>
-                  <p className="text-gray-300 text-sm text-center">
+                  <p style={{
+                    color: '#6b7280',
+                    fontSize: '0.875rem',
+                    textAlign: 'center'
+                  }}>
                     {palestrante.biografia}
                   </p>
                 </div>
@@ -395,43 +825,94 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Passes - Fundo Claro */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+      {/* Passes */}
+      <section style={{ padding: '4rem 0' }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem'
+        }}>
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              fontWeight: 'bold',
+              color: '#111827',
+              marginBottom: '1rem'
+            }}>
               Escolha Seu Passe
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p style={{
+              fontSize: '1.25rem',
+              color: '#6b7280',
+              maxWidth: '48rem',
+              margin: '0 auto'
+            }}>
               Diferentes opções para atender suas necessidades e orçamento. 
               Todos os passes incluem acesso ao conteúdo de alta qualidade e networking.
             </p>
           </div>
           
           {siteData?.passes && (
-            <div className="grid md:grid-cols-3 gap-8">
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem'
+            }}>
               {siteData.passes.map((passe, index) => (
-                <div key={index} className={`bg-white rounded-xl p-8 shadow-lg ${
-                  passe.nome === 'Premium' ? 'ring-4 ring-purple-500 transform scale-105' : ''
-                }`}>
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div key={index} style={{
+                  backgroundColor: 'white',
+                  borderRadius: '0.75rem',
+                  padding: '2rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  ...(passe.nome === 'Premium' ? {
+                    outline: '4px solid #7c3aed',
+                    transform: 'scale(1.05)'
+                  } : {})
+                }}>
+                  <div style={{
+                    textAlign: 'center',
+                    marginBottom: '1.5rem'
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.5rem',
+                      fontWeight: 'bold',
+                      color: '#111827',
+                      marginBottom: '0.5rem'
+                    }}>
                       {passe.nome}
                     </h3>
-                    <div className="text-4xl font-bold text-purple-600">
+                    <div style={{
+                      fontSize: '1.875rem',
+                      fontWeight: 'bold',
+                      color: '#7c3aed'
+                    }}>
                       R$ {passe.preco.toLocaleString()}
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 mb-6 text-center">
+                  <p style={{
+                    color: '#6b7280',
+                    marginBottom: '1.5rem',
+                    textAlign: 'center'
+                  }}>
                     {passe.beneficios}
                   </p>
                   
-                  <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
-                    passe.nome === 'Premium' 
-                      ? 'bg-purple-600 hover:bg-purple-700 text-white'
-                      : 'bg-gray-200 hover:bg-gray-300 text-gray-900'
-                  }`}>
+                  <button style={{
+                    width: '100%',
+                    padding: '0.75rem',
+                    borderRadius: '0.5rem',
+                    fontWeight: '600',
+                    border: 'none',
+                    cursor: 'pointer',
+                    ...(passe.nome === 'Premium' ? {
+                      backgroundColor: '#7c3aed',
+                      color: 'white'
+                    } : {
+                      backgroundColor: '#e5e7eb',
+                      color: '#111827'
+                    })
+                  }}>
                     Escolher {passe.nome}
                   </button>
                 </div>
@@ -442,22 +923,47 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-sm">📊</span>
+      <footer style={{
+        backgroundColor: '#111827',
+        color: 'white',
+        padding: '3rem 0'
+      }}>
+        <div style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 1rem',
+          textAlign: 'center'
+        }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.5rem',
+            marginBottom: '1rem'
+          }}>
+            <div style={{
+              width: '2rem',
+              height: '2rem',
+              background: 'linear-gradient(to right, #2563eb, #7c3aed)',
+              borderRadius: '0.5rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '0.875rem'
+            }}>
+              📊
             </div>
             <div>
-              <div className="text-green-400 font-bold text-lg">DATA VILLAGE</div>
-              <div className="text-green-300 text-sm">ERP SUMMIT 2026</div>
+              <div style={{ fontWeight: 'bold' }}>DATA VILLAGE</div>
+              <div style={{ fontSize: '0.875rem', color: '#9ca3af' }}>ERP SUMMIT 2026</div>
             </div>
           </div>
-          <p className="text-gray-400">
+          <p style={{ color: '#9ca3af' }}>
             © 2026 Data Village ERP Summit. Todos os direitos reservados.
           </p>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
