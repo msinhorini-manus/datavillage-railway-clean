@@ -67,7 +67,7 @@ export default function HomePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen hero-gradient flex items-center justify-center text-white text-2xl">
+      <div className="min-h-screen bg-gradient-to-br from-blue-500 via-purple-600 to-purple-800 flex items-center justify-center text-white text-2xl">
         Carregando...
       </div>
     )
@@ -75,101 +75,76 @@ export default function HomePage() {
 
   return (
     <>
-      <style jsx global>{`
-        .hero-gradient {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .text-shadow-lg {
-          text-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .glass-card {
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .gradient-text {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-      `}</style>
-      
       <div className="bg-white">
-        {/* Header - Estilo Original Data Village */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        {/* Header - EXATO como na referência */}
+        <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-blue-500 via-purple-600 to-purple-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
-              {/* Logo - Estilo Original */}
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-sm">📊</span>
+              {/* Logo - Verde exato */}
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <span className="text-white text-lg font-bold">📊</span>
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">DATA VILLAGE</div>
-                  <div className="text-xs text-primary-600 font-semibold">ERP SUMMIT</div>
+                  <div className="font-bold text-white text-lg">DATA VILLAGE</div>
+                  <div className="text-sm text-green-400 font-semibold">ERP SUMMIT</div>
                 </div>
               </div>
               
-              {/* Data e Local */}
-              <div className="hidden md:flex items-center space-x-6 text-sm">
-                <span className="text-gray-700 font-medium">Março 17-18, 2026</span>
-                <span className="text-gray-600">São Paulo</span>
+              {/* Data e Local - Centralizados em branco */}
+              <div className="hidden md:flex flex-col items-center text-center">
+                <span className="text-green-400 font-bold text-base">Março 17-18, 2026</span>
+                <span className="text-white text-sm">São Paulo</span>
               </div>
               
-              {/* Botão CTA */}
-              <button className="btn-primary">
+              {/* Botão Vermelho/Laranja */}
+              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md font-bold text-sm transition-colors">
                 INSCREVA-SE
               </button>
             </div>
           </div>
         </header>
 
-        {/* Hero Section - Estilo Original Data Village */}
-        <section className="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-black/10"></div>
+        {/* Hero Section - EXATO como na referência */}
+        <section className="bg-gradient-to-br from-blue-500 via-purple-600 to-purple-800 relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
           
-          <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-            {/* Badge ERP Summit */}
-            <div className="inline-flex items-center px-4 py-2 glass-card rounded-full text-sm font-medium mb-8">
-              <span className="mr-2">📊</span>
+          <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto">
+            {/* Badge ERP Summit - Fundo escuro como na referência */}
+            <div className="inline-flex items-center px-6 py-3 bg-black/40 backdrop-blur-md rounded-full text-base font-semibold mb-12">
+              <span className="mr-2 text-xl">📊</span>
               ERP Summit
             </div>
             
-            {/* Título Principal - Estilo Original */}
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold mb-8 leading-tight text-shadow-lg">
+            {/* Título GIGANTE - EXATO como na referência */}
+            <h1 className="text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black mb-8 leading-[0.85] tracking-tight">
               O FUTURO DOS<br/>
-              <span className="text-accent-400">
+              <span className="text-yellow-400 font-black">
                 DADOS
               </span><br/>
               ESTÁ AQUI!
             </h1>
             
-            {/* Data e local */}
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-xl mb-10">
-              <div className="text-accent-400 font-bold text-2xl">
+            {/* Data e local - Amarelo para data, branco para local */}
+            <div className="flex flex-col items-center justify-center space-y-2 text-2xl mb-12">
+              <div className="text-yellow-400 font-bold text-3xl tracking-wide">
                 MARÇO 17-18, 2026
               </div>
-              <div className="text-white text-lg">
+              <div className="text-white text-xl font-medium">
                 SÃO PAULO
               </div>
             </div>
             
-            {/* Botões CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
-              <button className="btn-secondary px-10 py-5 text-xl inline-flex items-center">
-                <span className="mr-3 text-2xl">▶</span>
+            {/* Botão Verde - EXATO como na referência */}
+            <div className="flex flex-col items-center justify-center space-y-6 mb-8">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-12 py-6 rounded-lg font-bold text-2xl transition-colors inline-flex items-center shadow-2xl">
+                <span className="mr-4 text-3xl">▶</span>
                 INSCREVA-SE AGORA
               </button>
             </div>
             
-            {/* Link Secundário */}
+            {/* Link Laranja - EXATO como na referência */}
             <div className="text-center">
-              <a href="#" className="text-accent-300 hover:text-accent-200 font-semibold text-lg underline transition-colors">
+              <a href="#" className="text-orange-400 hover:text-orange-300 font-semibold text-xl underline transition-colors">
                 Assista ao recap do summit 2025
               </a>
             </div>
@@ -192,8 +167,8 @@ export default function HomePage() {
             {siteData?.numeros && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 {siteData.numeros.map((numero, index) => (
-                  <div key={index} className="stat-card">
-                    <div className="stat-number text-primary-600">
+                  <div key={index} className="text-center">
+                    <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
                       {numero.titulo}
                     </div>
                     <div className="text-xl font-semibold text-gray-900 mb-4">
@@ -207,11 +182,11 @@ export default function HomePage() {
               </div>
             )}
             
-            <div className="card-gradient rounded-2xl p-8 text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">
                 Transformação Digital Acelerada
               </h3>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg">
                 Com a digitalização dos negócios, a demanda por profissionais especializados em dados 
                 cresceu 400% nos últimos 3 anos. O ERP Summit conecta você às principais tendências 
                 e oportunidades deste mercado em expansão.
@@ -236,8 +211,8 @@ export default function HomePage() {
             {siteData?.tendencias && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {siteData.tendencias.map((tendencia, index) => (
-                  <div key={index} className="card text-center">
-                    <div className="text-4xl font-bold text-secondary-600 mb-2">
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div className="text-4xl font-bold text-purple-600 mb-2">
                       {tendencia.percentual}%
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -269,8 +244,8 @@ export default function HomePage() {
             {siteData?.rois && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 {siteData.rois.map((roi, index) => (
-                  <div key={index} className="stat-card">
-                    <div className="stat-number text-accent-600">
+                  <div key={index} className="text-center">
+                    <div className="text-4xl font-bold text-green-600 mb-2">
                       {roi.metrica}
                     </div>
                     <div className="text-xl font-semibold text-gray-900 mb-4">
@@ -284,10 +259,10 @@ export default function HomePage() {
               </div>
             )}
             
-            <div className="text-center card-gradient rounded-2xl p-8 max-w-2xl mx-auto">
-              <div className="text-4xl font-bold mb-2 text-primary-600">$33Bi</div>
-              <div className="text-xl font-semibold mb-2 text-gray-900">Mercado global de BI em 2024</div>
-              <div className="text-lg text-gray-700">+11.9% crescimento anual</div>
+            <div className="text-center bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl p-8 text-white max-w-2xl mx-auto">
+              <div className="text-4xl font-bold mb-2">$33Bi</div>
+              <div className="text-xl font-semibold mb-2">Mercado global de BI em 2024</div>
+              <div className="text-lg">+11.9% crescimento anual</div>
             </div>
           </div>
         </section>
@@ -308,8 +283,8 @@ export default function HomePage() {
             {siteData?.setores && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {siteData.setores.map((setor, index) => (
-                  <div key={index} className="card text-center">
-                    <div className="text-3xl font-bold text-primary-600 mb-2">
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div className="text-3xl font-bold text-blue-600 mb-2">
                       {setor.percentual}%
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
@@ -341,8 +316,8 @@ export default function HomePage() {
             {siteData?.desafios && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 {siteData.desafios.map((desafio, index) => (
-                  <div key={index} className="stat-card">
-                    <div className="stat-number text-red-600">
+                  <div key={index} className="text-center">
+                    <div className="text-4xl font-bold text-red-600 mb-2">
                       {desafio.percentual}%
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
@@ -356,11 +331,11 @@ export default function HomePage() {
               </div>
             )}
             
-            <div className="card-gradient rounded-2xl p-8 text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+            <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl p-8 text-white text-center max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">
                 Oportunidade de Mercado
               </h3>
-              <p className="text-lg text-gray-700">
+              <p className="text-lg">
                 Empresas que superam esses desafios têm vantagem competitiva significativa 
                 e crescem 2.3x mais rápido que a concorrência.
               </p>
@@ -380,8 +355,8 @@ export default function HomePage() {
             {siteData?.projecoes && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {siteData.projecoes.map((projecao, index) => (
-                  <div key={index} className="card text-center">
-                    <div className="text-3xl font-bold text-secondary-600 mb-4">
+                  <div key={index} className="bg-white rounded-xl p-8 shadow-lg text-center">
+                    <div className="text-3xl font-bold text-purple-600 mb-4">
                       {projecao.metrica}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">
@@ -412,8 +387,8 @@ export default function HomePage() {
             {siteData?.palestrantes && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {siteData.palestrantes.map((palestrante, index) => (
-                  <div key={index} className="card">
-                    <div className="w-20 h-20 bg-gradient-to-r from-secondary-600 to-primary-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
+                    <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <span className="text-2xl font-bold text-white">
                         {palestrante.nome.charAt(0)}
                       </span>
@@ -421,7 +396,7 @@ export default function HomePage() {
                     <h3 className="text-xl font-bold text-center mb-2 text-gray-900">
                       {palestrante.nome}
                     </h3>
-                    <p className="text-secondary-600 text-center mb-1">
+                    <p className="text-purple-600 text-center mb-1">
                       {palestrante.cargo}
                     </p>
                     <p className="text-gray-600 text-center mb-4">
@@ -453,14 +428,14 @@ export default function HomePage() {
             {siteData?.passes && (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {siteData.passes.map((passe, index) => (
-                  <div key={index} className={`card ${
-                    passe.nome === 'Premium' ? 'ring-4 ring-secondary-600 transform scale-105' : ''
+                  <div key={index} className={`bg-white rounded-xl p-8 shadow-lg ${
+                    passe.nome === 'Premium' ? 'ring-4 ring-purple-600 transform scale-105' : ''
                   }`}>
                     <div className="text-center mb-6">
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
                         {passe.nome}
                       </h3>
-                      <div className="text-3xl font-bold text-secondary-600">
+                      <div className="text-3xl font-bold text-purple-600">
                         R$ {passe.preco.toLocaleString()}
                       </div>
                     </div>
@@ -471,8 +446,8 @@ export default function HomePage() {
                     
                     <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
                       passe.nome === 'Premium' 
-                        ? 'btn-secondary' 
-                        : 'btn-outline'
+                        ? 'bg-purple-600 hover:bg-purple-700 text-white' 
+                        : 'bg-gray-200 hover:bg-gray-300 text-gray-900'
                     }`}>
                       Escolher {passe.nome}
                     </button>
@@ -487,7 +462,7 @@ export default function HomePage() {
         <footer className="bg-gray-900 text-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white text-sm">📊</span>
               </div>
               <div>
